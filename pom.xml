@@ -8,7 +8,11 @@
   <artifactId>com.springCloud</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-
+  <modules>
+    <module>cloud-provider-payment8001</module>
+      <module>cloud-consumer-order80</module>
+      <module>cloud-api-commons</module>
+  </modules>
 
 <!--统一管理jar包版本-->
   <properties>
@@ -55,15 +59,11 @@
         <groupId>com.alibaba</groupId>
         <artifactId>druid</artifactId>
         <version>${druid.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.mybatis.spring.boot</groupId>
         <artifactId>mybatis-spring-boot-starter</artifactId>
         <version>${mybatis.spring.boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
     </dependencies>
 
