@@ -12,6 +12,13 @@
     <module>cloud-provider-payment8001</module>
       <module>cloud-consumer-order80</module>
       <module>cloud-api-commons</module>
+      <module>cloud-eureka-server7001</module>
+    <module>cloud-eureka-server7002</module>
+      <module>cloud-provider-payment8002</module>
+      <module>cloud-payment-payment8004</module>
+    <module>cloud-providerconsul-payment8006</module>
+    <module>cloud-consumerconsul-order80</module>
+      <module>cloud-consumer-feign-order80</module>
   </modules>
 
 <!--统一管理jar包版本-->
@@ -22,6 +29,7 @@
     <druid.version>1.2.4</druid.version>
     <mybatis.spring.boot.version>2.2.0</mybatis.spring.boot.version>
     <junit.version>4.12</junit.version>
+    <spring.could.alibaba>2.2.5.RELEASE</spring.could.alibaba>
   </properties>
 
   <!--子模块继承之后，提供作用：锁定版本+子module不用groupId和version-->
@@ -38,6 +46,13 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
         <version>Hoxton.SR11</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring.could.alibaba}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
