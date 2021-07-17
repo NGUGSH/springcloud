@@ -11,6 +11,9 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @RestController
 @Slf4j
@@ -63,6 +66,7 @@ public class PaymentController {
     @GetMapping("/timeout")
     public String FeignTimeout() throws InterruptedException {
         Thread.sleep(3000);
+//        ExecutorService
         return serverPort;
     }
 
