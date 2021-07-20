@@ -1,0 +1,37 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-center-config  #注册中心Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+          # 仓库地址
+          uri: https://github.com/NGUGSH/springcloud-config.git #github上的git仓库名
+          # 仓库文件夹名称，多个以逗号分隔
+          search-paths:
+            - springcloud-config
+          #读取分支
+          default-label: master
+          # git 仓库用户名（公开库可以不用填写）
+          username: 1115473245@qq.com
+          # git 仓库密码（公开库可以不用填写）
+          password: Gsh123456789+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#服务注册到Eureka的地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+#rabbitmq相关配置，暴露bus刷新配置的端点
+management: # 暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"

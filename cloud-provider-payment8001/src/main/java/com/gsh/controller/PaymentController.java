@@ -65,9 +65,14 @@ public class PaymentController {
 
     @GetMapping("/timeout")
     public String FeignTimeout() throws InterruptedException {
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
 //        ExecutorService
         return serverPort;
+    }
+
+    @GetMapping("/zipkin")
+    public String paymentZipkin(){
+        return "zipkin show";
     }
 
 }
